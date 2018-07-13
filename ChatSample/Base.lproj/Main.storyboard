@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14295.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IXJ-2T-WzH">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2352" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Peer list-->
+        <scene sceneID="L0E-8B-iiY">
+            <objects>
+                <navigationController title="Peer list" id="IXJ-2T-WzH" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bbd-Ls-tTm">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.89617478849999999" green="0.13433474300000001" blue="0.30141699309999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="noc-cl-rPc" kind="relationship" relationship="rootViewController" id="gbr-5u-gtl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PTE-rE-T4s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-460" y="299"/>
+        </scene>
+        <!--Chirp Messages-->
+        <scene sceneID="QbI-mm-pnU">
+            <objects>
+                <viewController id="noc-cl-rPc" customClass="ChatListController" customModule="ChatSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Bl-9i-34J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udL-in-3MT">
+                                <rect key="frame" x="20" y="606" width="335" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="tVg-tg-zbF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
+                                <state key="normal" title="Остановить транслятор"/>
+                                <connections>
+                                    <action selector="startButtonPressed:" destination="noc-cl-rPc" eventType="touchUpInside" id="M26-bp-YDy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b23-P0-cbN" userLabel="Received Label">
+                                <rect key="frame" x="16" y="184" width="343" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="kPW-IW-aWd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Последнее сообщение:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bup-5u-nfu">
+                                <rect key="frame" x="16" y="134" width="343" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="Bhp-bG-HHi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Состояние:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tag-XO-xSJ">
+                                <rect key="frame" x="16" y="84" width="223" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="223" id="Nhl-Dq-2zw"/>
+                                    <constraint firstAttribute="height" constant="29" id="o9w-zt-jmY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Остановлено" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOH-mc-C7I">
+                                <rect key="frame" x="222" y="84" width="137" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="3d4-0l-Qew"/>
+                                    <constraint firstAttribute="width" constant="137" id="KGY-Wa-ZRj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTR-of-qht">
+                                <rect key="frame" x="278" y="243" width="81" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.83137254900000002" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="81" id="MeH-hx-6Lo"/>
+                                    <constraint firstAttribute="height" constant="30" id="Pgj-gs-4N4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                <state key="normal" title="Отправить">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendButtonPressed:" destination="noc-cl-rPc" eventType="touchUpInside" id="Spu-oC-ZjN"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите сообщение..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cea-ii-Ysc">
+                                <rect key="frame" x="16" y="243" width="247" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="sPh-Rq-ioq"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Bup-5u-nfu" firstAttribute="leading" secondItem="C3p-RS-qy5" secondAttribute="leading" constant="16" id="1Ig-1K-CHq"/>
+                            <constraint firstItem="udL-in-3MT" firstAttribute="leading" secondItem="C3p-RS-qy5" secondAttribute="leading" constant="20" id="A3x-vz-W0t"/>
+                            <constraint firstItem="oTR-of-qht" firstAttribute="leading" secondItem="cea-ii-Ysc" secondAttribute="trailing" constant="15" id="BZK-Hr-Xxz"/>
+                            <constraint firstItem="oTR-of-qht" firstAttribute="top" secondItem="b23-P0-cbN" secondAttribute="bottom" constant="30" id="GlJ-XF-w4t"/>
+                            <constraint firstItem="tag-XO-xSJ" firstAttribute="top" secondItem="C3p-RS-qy5" secondAttribute="top" constant="20" id="LRf-rM-CLH"/>
+                            <constraint firstItem="C3p-RS-qy5" firstAttribute="trailing" secondItem="b23-P0-cbN" secondAttribute="trailing" constant="16" id="Md8-ah-Tjk"/>
+                            <constraint firstItem="b23-P0-cbN" firstAttribute="top" secondItem="Bup-5u-nfu" secondAttribute="bottom" constant="21" id="QRg-PW-dyX"/>
+                            <constraint firstItem="Bup-5u-nfu" firstAttribute="top" secondItem="tag-XO-xSJ" secondAttribute="bottom" constant="21" id="Qcy-x2-cqn"/>
+                            <constraint firstItem="C3p-RS-qy5" firstAttribute="trailing" secondItem="oTR-of-qht" secondAttribute="trailing" constant="16" id="TcL-Cy-5mn"/>
+                            <constraint firstItem="tag-XO-xSJ" firstAttribute="leading" secondItem="C3p-RS-qy5" secondAttribute="leading" constant="16" id="WGr-wU-hRd"/>
+                            <constraint firstItem="C3p-RS-qy5" firstAttribute="trailing" secondItem="qOH-mc-C7I" secondAttribute="trailing" constant="16" id="buu-X0-qgP"/>
+                            <constraint firstItem="cea-ii-Ysc" firstAttribute="leading" secondItem="C3p-RS-qy5" secondAttribute="leading" constant="16" id="c3f-nI-hmQ"/>
+                            <constraint firstItem="cea-ii-Ysc" firstAttribute="top" secondItem="b23-P0-cbN" secondAttribute="bottom" constant="30" id="d4i-mo-vPe"/>
+                            <constraint firstItem="C3p-RS-qy5" firstAttribute="trailing" secondItem="udL-in-3MT" secondAttribute="trailing" constant="20" id="dMQ-h5-V9g"/>
+                            <constraint firstItem="b23-P0-cbN" firstAttribute="leading" secondItem="C3p-RS-qy5" secondAttribute="leading" constant="16" id="deC-XH-q0b"/>
+                            <constraint firstItem="C3p-RS-qy5" firstAttribute="bottom" secondItem="udL-in-3MT" secondAttribute="bottom" constant="20" id="lSt-HM-DVw"/>
+                            <constraint firstItem="qOH-mc-C7I" firstAttribute="top" secondItem="C3p-RS-qy5" secondAttribute="top" constant="20" id="n01-wd-eGA"/>
+                            <constraint firstItem="C3p-RS-qy5" firstAttribute="trailing" secondItem="Bup-5u-nfu" secondAttribute="trailing" constant="16" id="ncj-P0-bBs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="C3p-RS-qy5"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Chirp Messages" id="eRH-wQ-1ge"/>
+                    <connections>
+                        <outlet property="messageTextfield" destination="cea-ii-Ysc" id="vFO-Um-urS"/>
+                        <outlet property="receivedLabel" destination="b23-P0-cbN" id="hfc-N8-NRK"/>
+                        <outlet property="sendButton" destination="oTR-of-qht" id="bKI-nT-44Q"/>
+                        <outlet property="startStopButton" destination="udL-in-3MT" id="prO-Gl-MOB"/>
+                        <outlet property="stateLabel" destination="qOH-mc-C7I" id="9Ns-0v-TXc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pa8-05-jRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="288.80000000000001" y="297.30134932533736"/>
+        </scene>
+    </scenes>
+</document>
