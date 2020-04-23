@@ -3,7 +3,4 @@ platform :ios, '10.0'
 
 target 'ChatSample' do
   use_frameworks!
-
-  #pod 'IQKeyboardManagerSwift'
-
 end
