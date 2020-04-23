@@ -2,8 +2,8 @@ import ChirpConnect
 import UIKit
 import Foundation
 
-let CHIRP_APP_KEY = "719e4DEf3cfF76EA9FB9A3ACB"
-let CHIRP_APP_SECRET = "2C5dC1202fD8899F48EE24c12e4397fa54ad8C49a4F64d0De8"
+let CHIRP_APP_KEY = "YOUR_CHIRP_APP_KEY"
+let CHIRP_APP_SECRET = "YOUR_CHIRP_APP_SECRET"
 
 class ChatListController: UIViewController {
     
@@ -12,7 +12,6 @@ class ChatListController: UIViewController {
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var startStopButton: UIButton!
     @IBOutlet weak var stateLabel: UILabel!
-    //    @IBOutlet weak var versionLabel: UILabel!
     
     var connect: ChirpConnect?
     
@@ -37,7 +36,6 @@ class ChatListController: UIViewController {
                         connect.receivedBlock = {
                             (data: Data?) -> () in
                             if let data = data {
-                                // ПОЛУЧЕНИЕ ДАННЫХ
                                 let payload = String(data: data, encoding: .utf8)!
                                 self.receivedLabel.text = payload
                             } else {
@@ -105,19 +103,6 @@ class ChatListController: UIViewController {
         
     }
     
-//    func decodeMessage(_ data: Data) -> String? {
-//        return String?
-//    }
-//
-//    func encodeMessage(_ message: String?) -> Data? {
-//        let string = String(utf8String: Int8(message?.utf8CString))
-//        if (string?.lengthOfBytes(using: .utf8) ?? 0) > connect.maxPayloadLength() {
-//            return nil
-//        }
-//        let stringData: Data? = string?.data(using: .utf8)
-//        return (connect?.isValidPayload(stringData!))! ? stringData : nil
-//    }
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(false)
     }
@@ -125,10 +110,6 @@ class ChatListController: UIViewController {
     
     @IBAction func sendButtonPressed(_ sender: Any) {
         if (messageTextfield.text?.count)! > 0 {
-//            let payload: Data? = messageTextfield.text?.data(using: .ascii)
-//            connect?.send(payload!)
-//            let data: Data = connect!.randomPayload(withLength: UInt(connect!.maxPayloadLength))
-            
             let text = (messageTextfield.text)!
             let data = Data(text.utf8)
             connect?.send(data)
@@ -165,10 +146,3 @@ class ChatListController: UIViewController {
         }
     }
 }
-
-//extension Data {
-//    var hexString: String {
-//        return map { String(format: "%02x", UInt8($0)) }.joined()
-//    }
-//}
-
